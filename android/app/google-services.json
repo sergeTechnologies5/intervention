@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "526478308862",
+    "firebase_url": "https://intervention-93186.firebaseio.com",
+    "project_id": "intervention-93186",
+    "storage_bucket": "intervention-93186.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526478308862:android:72fb242af133840a",
+        "android_client_info": {
+          "package_name": "com.intervention"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "526478308862-rqvltn1vc3s656c9gpt8s6bnjt2m77oc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbBVrLKXv0NV0rmENZxlSx07ZPXnus74Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

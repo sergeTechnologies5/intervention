@@ -1,0 +1,8 @@
+{
+        "appId":"707586",
+        "key":"S52d906076fa862c7d750",
+        "secret":"6abf0ff62df2d9199566",
+        "cluster":"ap2",
+        "encrypted":true,
+        "restServer":"http://10.0.3.155:4000"
+    }

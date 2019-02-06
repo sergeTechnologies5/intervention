@@ -10,7 +10,8 @@ import Stories from'./Stories';
 import Profile from'./Profile'; 
 import Chat from'./Chat'; 
 import MyChat from'./MyChat'; 
-import chatClient from'./chatClient';
+import Communities from'./Community'; 
+//import chatClient from'./ChatClient';
 const Home=createStackNavigator({
    Main:{
     	screen:Main
@@ -27,8 +28,8 @@ const Home=createStackNavigator({
     MyChat:{
     	screen:MyChat
     },
-    chatClient:{
-        screen:chatClient
+     Communities:{
+        screen:Communities
     },
 },
     {

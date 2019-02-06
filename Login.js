@@ -12,7 +12,9 @@ import {
   ToastAndroid,
   ActivityIndicator
 } from 'react-native';
-import firebase from 'react-native-firebase'
+import firebase from 'react-native-firebase';
+import {storage, storageLoad} from './Storage';
+import DefaultPreference from 'react-native-default-preference';
 
 export default class Login extends Component {
 
@@ -56,7 +58,17 @@ export default class Login extends Component {
           firebase
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
-      .then((response) => this.props.navigation.replace('Home'))
+      .then((response) => {
+        console.warn("response"+response);
+        DefaultPreference.set('displayName', response).then(function() {console.warn('done')});
+        storage.save({
+          key: 'loginState',
+          data: {
+            displayName: response.displayName
+          },
+          expires: null
+      });
+        this.props.navigation.replace('Home')})
       .catch(error => {
         console.warn(error)
         ToastAndroid.showWithGravity(

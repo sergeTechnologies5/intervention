@@ -13,6 +13,8 @@ import {
 } from 'react-native';
 import firebase from 'react-native-firebase';
 //import Firebase from 'firebase';
+import {storage, storageLoad} from './Storage';
+import DefaultPreference from 'react-native-default-preference';
 
 var config = {
     databaseURL: "https://intervention-93186.firebaseio.com/",
@@ -35,6 +37,7 @@ export default class SignUp extends Component {
   
   handleSignUp (e){
      e.preventDefault();
+     //alert("Sending");
      if (this.state.fullName===null || this.state.fullName==='') 
      {
       ToastAndroid.showWithGravity(
@@ -84,29 +87,36 @@ export default class SignUp extends Component {
         }
         else{
     this.setState({isLoading:true});
-    firebase
+
+    fetch('http://10.0.3.155:3000/adduser/?name='+this.state.fullName,{
+      method:'GET',
+      headers: {
+        Accept: 'application/json',
+    }
+  });
+    
+      firebase
      .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
       .then((user) =>  {
-        this.props.navigation.replace('Home')
-        /**
- Firebase.database().ref('Users/'+user.user.uid).set({
-        email,
-        fname,
-        lname
-    }).then((data)=>{
-        //success callback
-        console.log('data ' , data)
-    }).catch((error)=>{
-        //error callback
-        console.log('error ' , error)
-    })
-
-        db.ref('/Users/' + user.user.uid).push({
-          fullName: this.state.fullName,
-           email: this.state.email,
-       });firebase.database().ref('Users/' + user.user.uid).set();
-      }) */
+        
+        if(user.user){
+         user.user.updateProfile({
+            displayName: this.state.fullName
+          }).then((s)=> {
+            DefaultPreference.set('displayName', this.state.fullName).then(function() {console.warn('done')});
+            storage.save({
+              key: 'loginState',
+              data: {
+                displayName: this.state.fullName
+              },
+              expires: null
+          });
+            this.props.navigation.replace('Home');
+          })
+        }
+    
+    
     })
       .catch(error => {
         console.warn(error);

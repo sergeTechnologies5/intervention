@@ -15,11 +15,14 @@ import firebase from 'react-native-firebase';
 import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-material-cards'
 import logoutImage from './media/logout.png';
 import home from './media/home.png';
+import {storage, storageLoad} from './Storage';
+import DefaultPreference from 'react-native-default-preference';
 
 export default class HomeMenuView extends Component {
   constructor(props){
     super(props);
     this.state={
+      name:'Test'
     }
   }
   
@@ -55,6 +58,15 @@ export default class HomeMenuView extends Component {
         style={{width: 30, height:30, marginLeft: 10}}
         />)
   });
+  storageLoad('loginState', 'displayName').then((name)=>{
+    //console.warn(name)
+        this.setState({
+            name: name,
+        });
+    
+}, this);
+//DefaultPreference.get('displayName').then(function(value) {//console.warn(value)})
+
   }
 
     handleLogOut=()=>{
@@ -77,6 +89,9 @@ export default class HomeMenuView extends Component {
     return (
       <View style={styles.container}>
       <ScrollView>
+      <View style={{flex:1, alignItems:'center', justifyContent:'center', marginTop:10}} >
+    <Text style={{color:'#2296f3',fontWeight:'bold', fontSize:16, textDecorationLine:'underline'}}>Knowledge Base</Text>
+    </View>
         <View style={{flexDirection:'row'}}>
         <Card style={styles.menuBox}>
           <Image style={styles.icon} source={require("./media/depression.png")}/>
@@ -85,53 +100,55 @@ export default class HomeMenuView extends Component {
 
         <View style={styles.menuBox}>
           <Image style={styles.icon} source={require("./media/ocd.png")}/>
-          <Text style={styles.info}>OCD</Text>
+          <Text style={styles.info}>Trauma</Text>
         </View>
         </View>
 
         <View style={{flexDirection:'row'}}>
-        <View style={styles.menuBox}>
+      <Card style={styles.menuBox}>
           <Image style={styles.icon} source={require("./media/stress.png")}/>
-          <Text style={styles.info}>Stress</Text>
-        </View>
+          <Text style={styles.info}>Stress & Axiety</Text>
+        </Card>
 
         <View style={styles.menuBox}>
           <Image style={styles.icon} source={require("./media/grief.png")}/>
-          <Text style={styles.info}>Grief</Text>
+          <Text style={styles.info}>Addiction</Text>
         </View>
         </View>
 
+
+<View style={{flex:1, alignItems:'center', justifyContent:'center', marginTop:10}} >
+    <Text style={{color:'#00f',fontWeight:'bold', fontSize:16, textDecorationLine:'underline'}}>Support</Text>
+    </View>
+    <View style={{borderBottomWidth:1, borderBottomColor:'#808080', marginLeft:15,marginRight:15}}>
+</View>
         <View style={{flexDirection:'row'}}>
-        <TouchableOpacity style={styles.menuBox} onPress={()=>this.props.navigation.navigate('Stories')}>
-        <View >
-          <Image style={styles.icon} source={require("./media/stories.png")}/>
-          <Text style={styles.info}>Stories</Text>
-        </View>
-        </TouchableOpacity>
-
-        <View style={styles.menuBox}>
+        
+<TouchableOpacity style={styles.menuBox} onPress={()=>this.props.navigation.navigate('Communities')}>
+        <Card>
           <Image style={styles.icon} source={require("./media/community.png")}/>
           <Text style={styles.info}>Community</Text>
-        </View>
-        </View>
-
-<View style={{flexDirection:'row'}}>
-<View style={styles.menuBox}>
-          <Image style={styles.icon} source={require("./media/anxiety.jpg")}/>
-          <Text style={styles.info}>Anxiety</Text>
-        </View>
+        </Card>
+        
+        </TouchableOpacity>
         <View style={styles.menuBox}>
           <Image style={styles.icon} source={require("./media/professional.png")}/>
           <Text style={styles.info}>Professionals</Text>
         </View>
+        </View>
+
+
+<View style={{flex:1, alignItems:'center', justifyContent:'center', marginTop:10}} >
+    <Text style={{color:'#00f',fontWeight:'bold', fontSize:16, textDecorationLine:'underline'}}>More</Text>
+    </View>
+        <View style={{borderBottomWidth:1, borderBottomColor:'#808080', marginLeft:20,marginRight:20}}>
 </View>
-        
         <View style={{flexDirection:'row'}}>
         <TouchableOpacity style={styles.menuBox} onPress={()=>this.props.navigation.navigate('Profile')}>
-        <View >
+        <Card >
           <Image style={styles.icon} source={require("./media/profile.png")}/>
           <Text style={styles.info}>Profile</Text>
-        </View>
+        </Card>
         </TouchableOpacity>
         <View style={styles.menuBox}>
           <Image style={styles.icon} source={require("./media/about.png")}/>
@@ -145,6 +162,7 @@ export default class HomeMenuView extends Component {
                 </ActionButton.Item>
                 <ActionButton.Item buttonColor='#337AB7'  textStyle={{ color:"#82BA00", fontSize:14, fontWeight:'bold'}} title="Chat Room" onPress={()=>this.props.navigation.navigate('ChatClient')}>
                     <Icon name="message" size={20} color='#fff' />
+                    </ActionButton.Item>
                     <ActionButton.Item buttonColor='#337AB7'  textStyle={{ color:"#82BA00", fontSize:14, fontWeight:'bold'}} title="My Chat" onPress={()=>this.props.navigation.navigate('MyChat')}>
                     <Icon name="message" size={20} color='#fff' />
                 </ActionButton.Item>
@@ -161,7 +179,7 @@ const styles = StyleSheet.create({
     
   },
   menuBox:{
-    backgroundColor: "#DCDCDC",
+    backgroundColor: "#fff",
     width:"45%",
     height:100,
     alignItems: 'center',

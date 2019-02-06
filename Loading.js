@@ -1,11 +1,29 @@
 import React from 'react'
 import { View, Text, ActivityIndicator, StyleSheet } from 'react-native'
 import firebase from 'react-native-firebase';
-export default class Loading extends React.Component {
+import {storage, storageLoad} from './Storage';
+import DefaultPreference from 'react-native-default-preference';
 
+export default class Loading extends React.Component {
   componentDidMount() {
     firebase.auth().onAuthStateChanged(user => {
-      this.props.navigation.replace(user ? 'Home' : 'Login')
+    if(user){
+      var displayName=user.displayName;
+      DefaultPreference.set('displayName', displayName).then(function() {//console.warn('done')
+    });
+      storage.save({
+        key: 'loginState',
+        data: {
+          displayName: displayName
+        },
+        expires: null
+    });
+    this.props.navigation.replace( 'Home')
+    }
+    else{
+      this.props.navigation.replace( 'Login')
+    }
+      
     })
   }
   render() {

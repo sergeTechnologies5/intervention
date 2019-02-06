@@ -5,8 +5,10 @@ import {
   View,
   Image,
   ScrollView,
-  TouchableOpacity
+  TouchableOpacity,
+  Button
 } from 'react-native';
+import firebase from 'react-native-firebase';
 
 export default class Chat extends Component{
 	constructor(props){
@@ -50,11 +52,20 @@ then((response) => response.json())
     	console.warn(error)
             });
 }
+sendData=()=>{
+firebase.database().ref("Test").push({
+	"Hey":"Hello there"
+}).then((resp)=>{
+	console.warn(resp)
+})
+}
 
 	render(){
+		console.warn(this.state.name)
 		return(
-<View style={{justifyContent:'center', alignItems:'center'}}>
+<View style={{flex:1,justifyContent:'center', alignItems:'center'}}>
 <Text>Welcome to Chat</Text>
+<Button title="Test Firebase" onPress={this.sendData.bind(this)}/>
 </View>
 			)
 	}

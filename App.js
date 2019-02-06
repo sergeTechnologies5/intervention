@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 //import Routes from './Routes';
 import {Text } from 'react-native';
-import { createStackNavigator, } from 'react-navigation';
+import { createStackNavigator,createBottomTabNavigator } from 'react-navigation';
 import Login from './Login';
 import Loading from'./Loading';
 import Main from './Main'; 
@@ -12,7 +12,7 @@ import Chat from'./Chat';
 import MyChat from'./MyChat'; 
 import Communities from'./Community'; 
 //import chatClient from'./ChatClient';
-const Home=createStackNavigator({
+const home=createStackNavigator({
    Main:{
     	screen:Main
     },
@@ -37,6 +37,7 @@ const Home=createStackNavigator({
     }
 
 );
+
 const Routes=createStackNavigator({
     Login:{
     	screen:Login
@@ -47,9 +48,9 @@ const Routes=createStackNavigator({
     SignUp:{
     	screen:SignUp
     },
-    Home:{
-    	screen:Home
-    },
+    Home: { 
+        screen: home
+    }
 },
     {
     	initialRouteName: 'Loading',
@@ -65,3 +66,5 @@ export default class App extends Component{
 			)
 	}
 }
+
+

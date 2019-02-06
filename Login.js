@@ -113,10 +113,6 @@ login=<TouchableOpacity style={[styles.buttonContainer, styles.loginButton]} onP
               onChangeText={(password) => this.setState({password})}/>
         </View>
 
-        <TouchableOpacity style={styles.btnForgotPassword} onPress={() => alert('restore_password')}>
-            <Text style={styles.btnText}>Forgot your password?</Text>
-        </TouchableOpacity>
-
         {login}
 
 

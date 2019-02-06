@@ -13,10 +13,12 @@ const CHATKIT_TOKEN_PROVIDER_ENDPOINT = 'https://us1.pusherplatform.io/services/
         messages: [],
         CHATKIT_ROOM_ID:'27408855',
          CHATKIT_USER_NAME:'Kimani',
-         user:'Bot'
+         user:'Bot',
+         roomName:'Group'
       };
+
 static navigationOptions = {
-        title: 'My Chat',
+        title: 'Group',
         headerStyle: {
             backgroundColor: '#e81ce8',
         },
@@ -32,6 +34,14 @@ static navigationOptions = {
         DefaultPreference.get('displayName').then((value)=> {
           var user=value;
           this.setState({CHATKIT_USER_NAME:value}
+            )}
+          )
+         DefaultPreference.get('roomId').then((value)=> {
+          this.setState({CHATKIT_ROOM_ID:value}
+            )}
+          )
+         DefaultPreference.get('roomname').then((value)=> {
+          this.setState({roomName:value}
             )}
           )
         const tokenProvider = new TokenProvider({

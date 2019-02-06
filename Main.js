@@ -99,7 +99,7 @@ export default class HomeMenuView extends Component {
         </Card>
 
         <View style={styles.menuBox}>
-          <Image style={styles.icon} source={require("./media/ocd.png")}/>
+          <Image style={styles.icon} source={require("./media/trauma.png")}/>
           <Text style={styles.info}>Trauma</Text>
         </View>
         </View>
@@ -111,7 +111,7 @@ export default class HomeMenuView extends Component {
         </Card>
 
         <View style={styles.menuBox}>
-          <Image style={styles.icon} source={require("./media/grief.png")}/>
+          <Image style={styles.icon} source={require("./media/drugs.png")}/>
           <Text style={styles.info}>Addiction</Text>
         </View>
         </View>
@@ -123,14 +123,15 @@ export default class HomeMenuView extends Component {
     <View style={{borderBottomWidth:1, borderBottomColor:'#808080', marginLeft:15,marginRight:15}}>
 </View>
         <View style={{flexDirection:'row'}}>
+        <Card style={styles.menuBox}>
+<TouchableOpacity  onPress={()=>this.props.navigation.navigate('Communities')}>
         
-<TouchableOpacity style={styles.menuBox} onPress={()=>this.props.navigation.navigate('Communities')}>
-        <Card>
           <Image style={styles.icon} source={require("./media/community.png")}/>
           <Text style={styles.info}>Community</Text>
-        </Card>
+        
         
         </TouchableOpacity>
+        </Card>
         <View style={styles.menuBox}>
           <Image style={styles.icon} source={require("./media/professional.png")}/>
           <Text style={styles.info}>Professionals</Text>
@@ -144,12 +145,14 @@ export default class HomeMenuView extends Component {
         <View style={{borderBottomWidth:1, borderBottomColor:'#808080', marginLeft:20,marginRight:20}}>
 </View>
         <View style={{flexDirection:'row'}}>
-        <TouchableOpacity style={styles.menuBox} onPress={()=>this.props.navigation.navigate('Profile')}>
-        <Card >
+        <Card style={styles.menuBox}  >
+        <TouchableOpacity onPress={()=>this.props.navigation.navigate('Profile')}>
+        
           <Image style={styles.icon} source={require("./media/profile.png")}/>
           <Text style={styles.info}>Profile</Text>
-        </Card>
+       
         </TouchableOpacity>
+         </Card>
         <View style={styles.menuBox}>
           <Image style={styles.icon} source={require("./media/about.png")}/>
           <Text style={styles.info}>About Intervene</Text>

@@ -104,7 +104,12 @@ export default class SignUp extends Component {
          user.user.updateProfile({
             displayName: this.state.fullName
           }).then((s)=> {
-            DefaultPreference.set('displayName', this.state.fullName).then(function() {console.warn('done')});
+            DefaultPreference.set('displayName', this.state.fullName).then(function() {//console.warn('done')
+          });
+            DefaultPreference.set('userId', user.user.uid).then(function() {//console.warn('done')
+    });
+             DefaultPreference.set('email', user.user.email).then(function() {//console.warn('done')
+    });
             storage.save({
               key: 'loginState',
               data: {

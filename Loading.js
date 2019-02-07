@@ -9,7 +9,12 @@ export default class Loading extends React.Component {
     firebase.auth().onAuthStateChanged(user => {
     if(user){
       var displayName=user.displayName;
+      var uid=user.uid;
       DefaultPreference.set('displayName', displayName).then(function() {//console.warn('done')
+    });
+        DefaultPreference.set('userId', uid).then(function() {//console.warn('done')
+    });
+         DefaultPreference.set('email', user.email).then(function() {//console.warn('done')
     });
       storage.save({
         key: 'loginState',

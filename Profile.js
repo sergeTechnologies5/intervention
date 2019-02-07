@@ -5,6 +5,8 @@ import {
   View,
   Image,
 } from 'react-native';
+import avatar from './media/profile.png';
+import DefaultPreference from 'react-native-default-preference';
 
 export default class ProfileView extends Component {
   static navigationOptions = {
@@ -17,16 +19,32 @@ export default class ProfileView extends Component {
         fontWeight: 'bold',
     },
 };
+
+constructor(props) {
+    super(props);
+    this.state = {
+      name:"Name",
+      email:'email'
+    }
+  }
+   componentDidMount() {
+    DefaultPreference.get('displayName').then((value)=> {
+  this.setState({name:value})
+})
+     DefaultPreference.get('email').then((value)=> {
+  this.setState({email:value})
+})
+   }
   render() {
     return (
       <View style={styles.container}>
           <View style={styles.header}>
             <View style={styles.headerContent}>
                 <Image style={styles.avatar}
-                  source={{uri: 'https://bootdey.com/img/Content/avatar/avatar1.png'}}/>
+                  source={avatar}/>
 
                 <Text style={styles.name}>
-                  John Doe
+                  {this.state.name}
                 </Text>
             </View>
           </View>
@@ -34,15 +52,20 @@ export default class ProfileView extends Component {
           <View style={styles.body}>
             <View style={styles.bodyContent}>
               <Text style={styles.textInfo}>
-                johndoe@gmail.com
+               Email: {this.state.email}
               </Text>
           
               <Text style={styles.textInfo}>
-                Following: 244
+                Communities: 
+              </Text>
+              <Text style={styles.textInfo}>
+         
+                1. Depression
+                2.Anxiety
               </Text>
             
               <Text style={styles.textInfo}>
-                Followers: 1.250 
+                
               </Text>
             </View>
         </View>

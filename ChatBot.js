@@ -32,7 +32,7 @@ export default class Chat extends Component{
     }
 		}
 	static navigationOptions = {
-        title: 'Chat',
+        title: 'InterveneBot',
         headerStyle: {
             backgroundColor: '#e81ce8',
         },

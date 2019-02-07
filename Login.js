@@ -59,16 +59,14 @@ export default class Login extends Component {
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
       .then((response) => {
-        console.warn("response"+response);
-        DefaultPreference.set('displayName', response).then(function() {console.warn('done')});
-        storage.save({
-          key: 'loginState',
-          data: {
-            displayName: response.displayName
-          },
-          expires: null
-      });
-        this.props.navigation.replace('Home')})
+        //console.warn("response"+response.user.displayName);
+        DefaultPreference.set('displayName', response.user.displayName).then(function() {});
+        DefaultPreference.set('userId', response.user.uid).then(function() {//console.warn('done')
+    });
+        DefaultPreference.set('email', response.user.email).then(function() {//console.warn('done')
+    });
+        this.props.navigation.replace( 'Home')
+      })
       .catch(error => {
         console.warn(error)
         ToastAndroid.showWithGravity(

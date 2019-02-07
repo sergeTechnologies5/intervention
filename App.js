@@ -9,9 +9,16 @@ import SignUp from'./SignUp';
 import Stories from'./Stories'; 
 import Profile from'./Profile'; 
 import Chat from'./Chat'; 
+import ChatBot from'./ChatBot';
 import MyChat from'./MyChat'; 
 import Communities from'./Community'; 
-//import chatClient from'./ChatClient';
+import Depression from'./Depression';
+import About from'./About\ Intervene';
+import professionals from'./Professionals';
+import Trauma from'./Trauma';
+import Anxiety from'./Anxiety';
+import Addiction from'./Addiction';
+
 const home=createStackNavigator({
    Main:{
     	screen:Main
@@ -25,11 +32,35 @@ const home=createStackNavigator({
     Chat:{
     	screen:Chat
     },
+    ChatBot:{
+        screen:ChatBot
+    },
     MyChat:{
     	screen:MyChat
     },
-     Communities:{
+     Community:{
         screen:Communities
+    },
+    professionals:{
+        screen:professionals
+    },
+    Depression:{
+        screen:Depression
+    },
+    Depression:{
+        screen:Depression
+    },
+    Trauma:{
+        screen:Trauma
+    },
+    Addiction:{
+        screen:Addiction
+    },
+    Anxiety:{
+        screen:Anxiety
+    },
+    About:{
+        screen:About
     },
 },
     {

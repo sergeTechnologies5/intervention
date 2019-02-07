@@ -17,16 +17,14 @@ export default class Blog extends Component {
     super(props);
     this.state = {
       data: [
-        {id:1, title: "Lorem ipsum dolor",                  time:"2018-08-01 12:15 pm", image:"https://lorempixel.com/400/200/nature/6/", description:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean  ligula..."},
-        {id:2, title: "Sit amet, consectetuer",             time:"2018-08-12 12:00 pm", image:"https://lorempixel.com/400/200/nature/5/", description:"Lorem  dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula..."} ,
-        {id:3, title: "Dipiscing elit. Aenean ",            time:"2017-08-05 12:21 pm", image:"https://lorempixel.com/400/200/nature/4/", description:"Lorem ipsum dolor sit , consectetuer  elit. Aenean commodo ligula..."}, 
-        {id:4, title: "Commodo ligula eget dolor.",         time:"2015-08-12 12:00 pm", image:"https://lorempixel.com/400/200/nature/6/", description:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula..."}, 
-        {id:5, title: "Aenean massa. Cum sociis",           time:"2013-06-12 12:11 pm", image:"https://lorempixel.com/400/200/sports/1/", description:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  commodo ligula..."}, 
-        {id:6, title: "Natoque penatibus et magnis",        time:"2018-08-12 12:56 pm", image:"https://lorempixel.com/400/200/nature/8/", description:"Lorem ipsum  sit amet, consectetuer adipiscing elit. Aenean commodo ligula..."}, 
-        {id:7, title: "Dis parturient montes, nascetur",    time:"2018-08-12 12:33 pm", image:"https://lorempixel.com/400/200/nature/1/", description:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula..."}, 
-        {id:8, title: "Ridiculus mus. Donec quam",          time:"2018-06-12 12:44 pm", image:"https://lorempixel.com/400/200/nature/3/", description:"Lorem ipsum  sit amet, consectetuer adipiscing elit.  commodo ligula..."},
-        {id:9, title: "Felis, ultricies nec, pellentesque", time:"2012-07-12 12:23 pm", image:"https://lorempixel.com/400/200/nature/4/", description:"Lorem ipsum dolor sit amet, consectetuer  elit. Aenean commodo ligula..."},
-      ]
+        {id:1, title: "What is Depression",                  time:"2018-08-01 12:15 pm", image:"https://lorempixel.com/400/200/nature/6/", description:"epression is more than just feeling sad. Everyone feels upset or unmotivated from time to time, but depression is more serious. It is a mood disorder characterized by prolonged feelings of sadness and loss of interest in daily activities. If these symptoms persist for a period of at least two weeks, it is considered a depressive episode."},
+        {id:2, title: "Patient Statistics",             time:"2018-08-12 12:00 pm", image:"https://lorempixel.com/400/200/nature/5/", description:"Lorem  dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula..."} ,
+        {id:3, title: "Dipiscing elit. Aenean ",            time:"2017-08-05 12:21 pm", image:"https://lorempixel.com/400/200/nature/4/", description:"ccording to the National Institute of Mental Health (NIMH), major depression is one of the most common mental disorders in the United States."}, 
+        {id:4, title: "Causes of Depression",         time:"2015-08-12 12:00 pm", image:"https://lorempixel.com/400/200/nature/6/", description:"There is no one cause for depression, as it depends on a unique combination of an individual’s genetic makeup and environmental conditions.There are many factors to take into account"}, 
+        {id:5, title: "Types of Depression",           time:"2013-06-12 12:11 pm", image:"https://lorempixel.com/400/200/sports/1/", description:"Major depression,Dysthymia, Seasonal Affective Disorder, Atypical Depression,Bipolar Disorder ,Postpartum Depression,Premenstrual Dysphoric Disorder"}, 
+        {id:6, title: "Signs and Symptoms of Depression",        time:"2018-08-12 12:56 pm", image:"https://lorempixel.com/400/200/nature/8/", description:"Persistent feelings of sadness, hopelessness, worthlessness, or emptiness,Irritability, frustration, or restlessness"}, 
+        {id:7, title: "Treatment",    time:"2018-08-12 12:33 pm", image:"https://lorempixel.com/400/200/nature/1/", description:"Any treatment for depression should coincide with a healthy diet and regular sleep schedule. It may sound simplistic, but the importance of taking care of your body cannot be overstated."}, 
+       ]
     };
   }
 static navigationOptions = {

@@ -103,8 +103,10 @@ JoinRoom(roomname,roomId){
           { cancelable: false }
         )
       }*/
-      DefaultPreference.set('roomname', roomname).then(function() {console.warn('done: roomname'+ roomname)});
-      DefaultPreference.set('roomId', roomId).then(function() {console.warn('done:roomId'+ roomId)});
+      DefaultPreference.set('roomname', roomname).then(function() {//console.warn('done: roomname'+ roomname)
+  });
+      DefaultPreference.set('roomId', roomId).then(function() {//console.warn('done:roomId'+ roomId)
+  });
       this.props.navigation.navigate('MyChat');
 }
 renderRooms(data){
@@ -121,8 +123,8 @@ renderRooms(data){
     }
 render(){
 	const myRooms=[{
-    	'name':'Depresseion',
-    	'id':'27276626',
+    	'name':'Depression',
+    	'id':'27376626',
     	'createdByUserId':'Ken',
     	'createdAt':'Wed, Feb 6, 2019',
     	'image':depressionImage
@@ -141,7 +143,7 @@ render(){
     	'image':bipolarImage
     },
     {
-    	'name':'Post Traumatic Disorder',
+    	'name':'Post Traumatic Stress Disorder',
     	'id':'27408566',
     	'createdByUserId':'Dommy',
     	'createdAt':'Wed, Feb 6, 2019',

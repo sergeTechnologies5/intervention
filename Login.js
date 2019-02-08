@@ -15,6 +15,7 @@ import {
 import firebase from 'react-native-firebase';
 import {storage, storageLoad} from './Storage';
 import DefaultPreference from 'react-native-default-preference';
+import logo from './media/ic_launcher.png';
 
 export default class Login extends Component {
 
@@ -91,9 +92,10 @@ login=<TouchableOpacity style={[styles.buttonContainer, styles.loginButton]} onP
     return (
       <ImageBackground style={{width:'100%' ,height:'100%'}} source={require("./media/login_background_mobile.png")}>
       <View style={styles.container}>
+      <Image style={{alignSelf:'center', width: 100 , height:100}} source={logo}/> 
       <Text style={[styles.btnText, {fontSize: 20, fontWeight:'bold', marginBottom:10,textDecorationLine:'underline'}]}>Login</Text>
         <View style={styles.inputContainer}>
-          <Image style={styles.inputIcon}source={require("./media/email.png")}/>
+          <Image style={styles.inputIcon} source={require("./media/email.png")}/>
           <TextInput style={styles.inputs}
               placeholder="Email"
               keyboardType="email-address"

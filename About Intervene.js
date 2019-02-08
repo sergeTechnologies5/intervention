@@ -15,7 +15,7 @@ import aboutImage from './media/ic_launcher.png';
 export default class Depression extends Component {
 
 static navigationOptions = {
-        title: 'About Intervene',
+        title: 'About Intervention',
         headerStyle: {
             backgroundColor: '#e81ce8',
         },
@@ -34,7 +34,7 @@ static navigationOptions = {
         <ScrollView>
           <View style={{alignItems:'center', marginHorizontal:30}}>
             <Image style={styles.productImg} source={aboutImage}/>
-            <Text style={styles.name}>About Intervene</Text>
+            <Text style={styles.name}>About Intervention</Text>
             <Text style={styles.price}></Text>
             <Text style={styles.description}>
             Intervene mobile app is an application developed to help those suffering from mental health issues.

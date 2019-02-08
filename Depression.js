@@ -3,7 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
+  TouchableHighlight,
   Image,
   Alert,
   ScrollView,
@@ -92,9 +92,9 @@ adolescents ages 12 to 17.
           </View>
           <View style={styles.separator}></View>
           <View style={styles.addToCarContainer}>
-            <TouchableOpacity style={styles.shareButton} onPress={()=> this.props.navigation.navigate("Stories")}>
+            <TouchableHighlight style={styles.shareButton} onPress={()=> this.props.navigation.navigate("Stories")}>
               <Text style={styles.shareButtonText}>More Articles</Text>  
-            </TouchableOpacity>
+            </TouchableHighlight>
           </View> 
         </ScrollView>
       </View>

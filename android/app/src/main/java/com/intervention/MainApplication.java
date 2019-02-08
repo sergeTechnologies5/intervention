@@ -3,6 +3,7 @@ package com.intervention;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.reactnativecomponent.splashscreen.RCTSplashScreenPackage;
 import com.kevinresol.react_native_default_preference.RNDefaultPreferencePackage;
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -30,8 +31,9 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RCTSplashScreenPackage(),
             new RNDefaultPreferencePackage(),
-            new SplashScreenReactPackage(),
+            //new SplashScreenReactPackage(),
             new VectorIconsPackage(),
             //new RNBluemixPackage(),
             new RNFirebasePackage(),

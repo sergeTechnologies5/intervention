@@ -4,7 +4,7 @@ import {
   Text,
   View,
   Image,
-  TouchableOpacity,
+  TouchableHighlight,
   ScrollView
 } from 'react-native';
 import professionalImage from './media/profile.png';
@@ -123,15 +123,16 @@ docs:[{
               
               {doc.description}
               </Text>
-              <View style={styles.buttonContainer}>
-            <TouchableOpacity onPress={()=>alert("Please upgrade Account to access this Service")}>
+             
+            <TouchableHighlight style={styles.buttonContainer} onPress={()=>alert("Please upgrade Account to access this Service")}>
+             <View >
             <View style={{flexDirection:'row'}}>
             <Icon name="message" size={20} color='#e81ce8' />
             <Text style={{marginRight:10}}>Contact {doc.Name}</Text>
             </View>
-            
-            </TouchableOpacity>
             </View>
+            </TouchableHighlight>
+            
             </View>
         </View>
           
@@ -213,7 +214,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#00CED1",
   },
   description:{
-    
     color: "#000",
     marginTop:10,
     textAlign: 'center'

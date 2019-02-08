@@ -3,7 +3,6 @@ import { View, Text, ActivityIndicator, StyleSheet } from 'react-native'
 import firebase from 'react-native-firebase';
 import {storage, storageLoad} from './Storage';
 import DefaultPreference from 'react-native-default-preference';
-import SplashScreen from 'react-native-smart-splash-screen'
 
 export default class Loading extends React.Component {
   componentDidMount() {
@@ -24,19 +23,9 @@ export default class Loading extends React.Component {
         },
         expires: null
     });
-    SplashScreen.close({
-        animationType: SplashScreen.animationType.scale,
-        duration: 850,
-        delay: 500,
-     })
     this.props.navigation.replace( 'Home')
     }
     else{
-      SplashScreen.close({
-        animationType: SplashScreen.animationType.scale,
-        duration: 850,
-        delay: 500,
-     })
       this.props.navigation.replace( 'Login')
     }
       

@@ -4,7 +4,7 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
+  TouchableHighlight,
   Image,
   Alert,
   ScrollView,
@@ -66,13 +66,13 @@ export default class Home extends Component {
   }
   componentDidMount() {
     this.props.navigation.setParams({
-        headerRight: (<TouchableOpacity onPress={this.handleLogOut}>
+        headerRight: (<TouchableHighlight onPress={this.handleLogOut}>
     <Image
     source={logoutImage}
     style={{width: 30, height:30, marginRight: 10}}
     />
 
-</TouchableOpacity>
+</TouchableHighlight>
     ),
     headerLeft:(<Image
       source={home}
@@ -129,15 +129,17 @@ DefaultPreference.get('userId').then(function(value) {
           }}
           renderItem={({item}) => {
             return (
-              <TouchableOpacity style={[styles.card, {backgroundColor:item.color}]} onPress={() => this.props.navigation.navigate(item.title)}>
-                <View style={styles.cardHeader}>
+              <TouchableHighlight style={[styles.card, {backgroundColor:item.color}]} onPress={() => this.props.navigation.navigate(item.title)}>
+                <View>
+              <View style={styles.cardHeader}>
                   <Text style={styles.title}>{item.title}</Text>
                 </View>
                 <Image style={styles.cardImage} source={item.image}/>
                 <View style={styles.cardFooter}>
                   <Text style={styles.subTitle}></Text>
                 </View>
-              </TouchableOpacity>
+                </View>
+              </TouchableHighlight>
             )
           }}/>
           <View style={{alignItems:'center', justifyContent:'center',  height:20}} >
@@ -153,15 +155,16 @@ DefaultPreference.get('userId').then(function(value) {
           }}
           renderItem={({item}) => {
             return (
-              <TouchableOpacity style={[styles.card, {backgroundColor:item.color}]} onPress={() => this.props.navigation.navigate(item.title)}>
-                <View style={styles.cardHeader}>
+              <TouchableHighlight style={[styles.card, {backgroundColor:item.color}]} onPress={() => this.props.navigation.navigate(item.title)}>
+                <View><View style={styles.cardHeader}>
                   <Text style={styles.title}>{item.title}</Text>
                 </View>
                 <Image style={styles.cardImage} source={item.image}/>
                 <View style={styles.cardFooter}>
                   <Text style={styles.subTitle}></Text>
                 </View>
-              </TouchableOpacity>
+                </View>
+              </TouchableHighlight>
             )
           }}/>
           <View style={{alignItems:'center', justifyContent:'center',  height:20}} >
@@ -177,7 +180,8 @@ DefaultPreference.get('userId').then(function(value) {
           }}
           renderItem={({item}) => {
             return (
-              <TouchableOpacity style={[styles.card, {backgroundColor:item.color}]} onPress={() => this.props.navigation.navigate(item.title)}>
+              <TouchableHighlight style={[styles.card, {backgroundColor:item.color}]} onPress={() => this.props.navigation.navigate(item.title)}>
+                <View>
                 <View style={styles.cardHeader}>
                   <Text style={styles.title}>{item.title}</Text>
                 </View>
@@ -185,7 +189,8 @@ DefaultPreference.get('userId').then(function(value) {
                 <View style={styles.cardFooter}>
                   <Text style={styles.subTitle}></Text>
                 </View>
-              </TouchableOpacity>
+                </View>
+              </TouchableHighlight>
             )
           }}/>
           </ScrollView>
@@ -274,7 +279,7 @@ import {
   View,
   Image,
   ScrollView,
-  TouchableOpacity,
+  TouchableHighlight,
   Alert,
   BackHandler
 } from 'react-native';
@@ -314,13 +319,13 @@ export default class HomeMenuView extends Component {
     
     componentDidMount() {
       this.props.navigation.setParams({
-          headerRight: (<TouchableOpacity onPress={this.handleLogOut}>
+          headerRight: (<TouchableHighlight onPress={this.handleLogOut}>
       <Image
       source={logoutImage}
       style={{width: 30, height:30, marginRight: 10}}
       />
   
-  </TouchableOpacity>
+  </TouchableHighlight>
       ),
       headerLeft:(<Image
         source={home}
@@ -393,13 +398,13 @@ export default class HomeMenuView extends Component {
 </View>
         <View style={{flexDirection:'row'}}>
         <Card style={styles.menuBox}>
-<TouchableOpacity  onPress={()=>this.props.navigation.navigate('Communities')}>
+<TouchableHighlight  onPress={()=>this.props.navigation.navigate('Communities')}>
         
           <Image style={styles.icon} source={require("./media/community.png")}/>
           <Text style={styles.info}>Community</Text>
         
         
-        </TouchableOpacity>
+        </TouchableHighlight>
         </Card>
         <View style={styles.menuBox}>
           <Image style={styles.icon} source={require("./media/professional.png")}/>
@@ -415,12 +420,12 @@ export default class HomeMenuView extends Component {
 </View>
         <View style={{flexDirection:'row'}}>
         <Card style={styles.menuBox}  >
-        <TouchableOpacity onPress={()=>this.props.navigation.navigate('Profile')}>
+        <TouchableHighlight onPress={()=>this.props.navigation.navigate('Profile')}>
         
           <Image style={styles.icon} source={require("./media/profile.png")}/>
           <Text style={styles.info}>Profile</Text>
        
-        </TouchableOpacity>
+        </TouchableHighlight>
          </Card>
         <View style={styles.menuBox}>
           <Image style={styles.icon} source={require("./media/about.png")}/>

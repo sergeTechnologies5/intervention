@@ -3,7 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
+  TouchableHighlight,
   Image,
   Alert,
   ScrollView,
@@ -66,9 +66,9 @@ What Are the Main Sources of Trauma?</Text>
           </View>
           <View style={styles.separator}></View>
           <View style={styles.addToCarContainer}>
-            <TouchableOpacity style={styles.shareButton} onPress={()=> alert("Coming soon..")}>
+            <TouchableHighlight style={styles.shareButton} onPress={()=> alert("Coming soon..")}>
               <Text style={styles.shareButtonText}>More Articles</Text>  
-            </TouchableOpacity>
+            </TouchableHighlight>
           </View> 
         </ScrollView>
       </View>

@@ -20,11 +20,11 @@ export default class Chat extends Component{
       messages: [
         {
           _id: 1,
-          text: 'Hello. This is InterveneBot.How can I help?',
+          text: 'Hello. This is Liz.How can I help?',
           createdAt: new Date(),
           user: {
             _id: 2,
-            name: 'InterveneBot',
+            name: 'Liz',
             avatar: 'https://placeimg.com/140/140/any',
           },
         },
@@ -32,7 +32,7 @@ export default class Chat extends Component{
     }
 		}
 	static navigationOptions = {
-        title: 'InterveneBot',
+        title: 'Liz',
         headerStyle: {
             backgroundColor: '#e81ce8',
         },
@@ -66,8 +66,8 @@ const incomingMessage = {
       text: resp.response,
       createdAt: new Date(),
       user: {
-        _id: 'InterveneBot',
-        name: 'InterveneBot',
+        _id: 'Liz',
+        name: 'Liz',
         avatar:
           'https://placeimg.com/140/140/any',
       },
